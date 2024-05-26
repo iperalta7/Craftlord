@@ -12,7 +12,7 @@ GEM
     domain_name (0.6.20240107)
     dotenv (3.1.2)
     event_emitter (0.2.6)
-    ffi (1.16.3-x64-mingw-ucrt)
+    ffi (1.16.3)
     http-accept (1.7.0)
     http-cookie (1.0.5)
       domain_name (~> 0.5)
@@ -33,11 +33,11 @@ GEM
       websocket
 
 PLATFORMS
-  x64-mingw-ucrt
+  aarch64-linux
 
 DEPENDENCIES
   discordrb
   dotenv
 
 BUNDLED WITH
-   2.4.10
+   2.4.19
