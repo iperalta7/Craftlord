@@ -20,6 +20,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2024.0507)
     netrc (0.11.0)
+    open3 (0.2.1)
     opus-ruby (1.0.1)
       ffi
     rest-client (2.1.0)
@@ -38,6 +39,7 @@ PLATFORMS
 DEPENDENCIES
   discordrb
   dotenv
+  open3
 
 BUNDLED WITH
    2.4.19
