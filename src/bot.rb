@@ -1,15 +1,13 @@
 #!/usr/bin/env ruby
 
 require 'discordrb'
-require 'dotenv'
 require_relative 'commands/command'
+require_relative 'config/config_wrapper'
 
-Dotenv.load('config.env')
-discord_bot_token = ENV['DISCORD_BOT_TOKEN']
-puts discord_bot_token
-bot = Discordrb::Bot.new token: discord_bot_token
+config = CraftminConfig.config
+bot = Discordrb::Bot.new(token: config.token)
 
-bot =  Discordrb::Commands::CommandBot.new token: discord_bot_token, prefix: '/'
+bot =  Discordrb::Commands::CommandBot.new(token: config.token, prefix: config.prefix)
 commands = CraftminCommands.new(bot)
 
 bot.run
