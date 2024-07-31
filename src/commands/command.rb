@@ -4,13 +4,13 @@ require 'open3'
 class CraftminCommands
   def initialize(bot)
     @bot = bot
+    @config = CraftminConfig.config
     set_up
   end
 
   def log_command
     @bot.command :log do |event|
-        log_file_path = "#{ENV['SERVER_INSTALLATION_DIR']}/server.log"
-        puts log_file_path
+        log_file_path = "#{@config.server_dir}/server.log"
         log_content = read_last_lines(log_file_path, 10)
         unless @pinned_message_id
           message = event.send_message("```\n#{log_content}\n```")
